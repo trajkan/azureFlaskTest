@@ -10,7 +10,7 @@ def home():
 
 @app.route('/predict_api', methods=["GET","POST"])
 def list_post():
-    json_body = request.get_json()
+    json_body = request.get_json(force=True)
     predictions = 2 * json_body[0]   
     predictions = list(predictions)
     return jsonify(results = predictions)
